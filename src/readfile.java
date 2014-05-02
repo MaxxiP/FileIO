@@ -1,4 +1,4 @@
-//author Miles Döring, Lennart Muchow ---test
+//author Miles Döring, Lennart Muchow
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -7,7 +7,6 @@ import java.util.HashMap;
 
 public class readfile {
 
-	public static HashMap alph = new HashMap();
 	public static HashMap alph_num = new HashMap();	
 	public static int[] cnt_alph = new int[200];
 
@@ -15,11 +14,6 @@ public class readfile {
 	public static void main(String[] args) throws IOException{
 		FileReader inputStream = null;
         FileWriter outputStream = null;
-        
-        
-        for(int i=97;i<=122;i++){
-			alph.put(i, (char)i);
-		}
 
         try {
             inputStream = new FileReader("src/input.txt");
@@ -42,9 +36,8 @@ public class readfile {
             	outputStream.write((char)i + "(" + i + ")" + ": ");
             	outputStream.write("" + (int)x);
             	outputStream.write("\r\n");
-            	
-            	System.out.print((char)i + "(" + i + ")" + ": ");
-            	System.out.println(cnt_alph[i]);
+            	//System.out.print((char)i + "(" + i + ")" + ": ");
+            	//System.out.println(cnt_alph[i]);
             }
             
         } finally {
@@ -59,16 +52,3 @@ public class readfile {
 	}
 
 }
-
-
-/**int c;
-while ((c = inputStream.read()) != -1) {
-	outputStream.write("Char: [");
-	outputStream.write(c);
-	outputStream.write("] -- [" + (int)c + "]");
-	outputStream.write("\r\n");                
-for(int i=97;i<=122;i++){
-	outputStream.write("Buchstabe: ");
-	outputStream.write((char)alph.get(i));
-	outputStream.write("\r\n");
-}*/
